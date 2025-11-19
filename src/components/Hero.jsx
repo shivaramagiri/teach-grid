@@ -19,6 +19,8 @@ export default function Hero(){
           <div className="p-3 rounded-lg bg-white shadow">Live Project</div>
           <div className="p-3 rounded-lg bg-white shadow">Mentorship</div>
           <div className="p-3 rounded-lg bg-white shadow">Career Help</div>
+           <div className="p-3 rounded-lg bg-white shadow">Resume Build</div>
+           <div className="p-3 rounded-lg bg-white shadow">Mock Interview</div>
         </div>
       </div>
 

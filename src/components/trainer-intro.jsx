@@ -1,30 +1,61 @@
-import React from "react";
-
+import React, { useState } from "react";
+import TrainerModal from "./trainer-modal";
+const images = import.meta.glob('/src/assets/trainers/*.{jpg,png}', { eager: true, as: 'url' });
+function getImageUrl(filename) {
+  const key = `/src/assets/trainers/${filename}`;
+  return images[key] || '';
+}
 const trainers = [
   {
     name: "Shiva Ramagiri",
     role: "Full-Stack Trainer (MERN / MEAN)",
-    experience: "7+ Years Experience",
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "NodeJS", "MongoDB"],
-    photo: "https://i.imgur.com/4ZQZ4Yy.png", // replace with your real image
+    experience: "10+ Years Experience",
+    skills: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Jquery", "Angular", "Angular Material", "Story Book","NGRX", "Rxjs", "Reactjs", "Redux", "NodeJS", "Expressjs", "MongoDB"],
+    photo: getImageUrl("shiva_ramagiri.jpg"),
+    linkedin: "https://www.linkedin.com/in/shiva-r-1452b9159",
+    whatsapp: "9848696422",
+    about:
+      "With over 10 years of experience in full-stack development, Shiva specializes in building scalable web applications using MERN and MEAN technologies. He has successfully delivered multiple end-to-end projects and brings strong expertise in JavaScript frameworks, modern UI development, backend API creation, and database design. As a trainer, he focuses on hands-on learning, real-time project development, and helping students become job-ready in full-stack technologies."
   },
+
   {
-    name: "Rahul Verma",
-    role: "Frontend Trainer (React / Angular)",
-    experience: "6+ Years Experience",
-    skills: ["React", "Angular", "Redux", "TypeScript", "UI/UX"],
-    photo: "https://i.imgur.com/rH4kz6P.png",
+    name: "Yakanna",
+    role: "Python Trainer",
+    experience: "10+ Years Experience",
+    skills: [
+      "Core Python",
+      "Data Science",
+      "Django & Flask Frameworks",
+    ],
+    photo: getImageUrl("yakanna.png"),
+    linkedin: "https://www.linkedin.com/in/bolagani-yakanna-b43897131",
+    whatsapp: "9848696422",
+    about:
+      "An experienced Python developer and instructor with over 10 years of industry expertise, specializing in Core Python, Django, Flask, and Data Science fundamentals. Yakanna has trained hundreds of students and working professionals in building strong programming foundations, backend application development, and data-driven solutions. His teaching style emphasizes clarity, practical examples, and building real-time applications that help learners gain confidence in Python."
   },
+
   {
-    name: "Ananya Desai",
-    role: "Backend Trainer (NodeJS / API Development)",
-    experience: "5+ Years Experience",
-    skills: ["NodeJS", "Express", "MongoDB", "SQL", "Microservices"],
-    photo: "https://i.imgur.com/CxQJ9pK.png",
+    name: "Rajesh Ravi Kiran",
+    role: "Career Guidance Coach / Career Mentor",
+    experience: "25+ Years Experience",
+    skills: [
+      "Career Planning",
+      "Interview Preparation",
+      "Resume Building",
+      "Communication"
+    ],
+    photo: getImageUrl("rajesh.png"),
+    linkedin: "https://www.linkedin.com/in/rvaddiparthy",
+    whatsapp: "9848696422",
+    about:
+      "Rajesh is a seasoned career mentor with 25+ years of experience guiding students and professionals toward successful career paths. He specializes in career planning, interview preparation, communication improvement, and resume-building techniques. His sessions are highly interactive and personalized, helping individuals identify their strengths, build confidence, and achieve career growth. Rajesh’s mentorship has transformed the journeys of many students entering the IT industry."
   },
 ];
 
+
 export default function TrainerIntro() {
+  const [selectedTrainer, setSelectedTrainer] = useState(null);
+
   return (
     <section className="w-full py-20 px-6 bg-gray-50">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
@@ -75,13 +106,18 @@ export default function TrainerIntro() {
 
             {/* Button */}
             <div className="flex justify-center mt-8">
-              <button className="px-6 py-2 bg-blue-600 text-white text-sm rounded-lg shadow hover:bg-blue-700 transition">
+              <button onClick={() => setSelectedTrainer(trainer)} className="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-orange-400 text-white shadow-lg hover:scale-105 transition">
                 View Profile
               </button>
             </div>
           </div>
         ))}
       </div>
+       <TrainerModal
+        open={!!selectedTrainer}
+        onClose={() => setSelectedTrainer(null)}
+        trainer={selectedTrainer}
+      />
     </section>
   );
 }

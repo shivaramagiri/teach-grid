@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-slate-700{
+    border-radius: 8px;
+    padding: 9px;
+    background-color: rgb(254 246 243);
+    font-weight: 500;
+    color: rgb(20 27 37);
+}
+
+.tech-profile-icon {
+    background-color: #ee4f92d4;
+}

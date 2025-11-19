@@ -13,13 +13,13 @@ export default function PremiumCard({ program, onShow }){
           <div>
             <div className="text-sm text-slate-700">{program.level}</div>
             <div className="text-2xl font-extrabold text-slate-900 mt-2">{program.title}</div>
-            <div className="mt-4 text-sm text-slate-700">
+            {/* <div className="mt-4 text-sm text-slate-700">
               {program.duration} • {program.price}
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col items-end gap-3">
             <div
-              className="w-14 h-14 rounded-lg flex items-center justify-center font-bold text-white shadow"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-orange-400 text-white shadow-lg hover:scale-105 transition"
               style={{ background: `linear-gradient(135deg, ${program.colorFrom}, ${program.colorTo})` }}
             >
               {program.title.split(" ")[0][0]}
@@ -41,10 +41,10 @@ export default function PremiumCard({ program, onShow }){
           ))}
         </div>
 
-        <div className="mt-6 flex items-center gap-3">
+        {/* <div className="mt-6 flex items-center gap-3">
           <div className="text-xs text-slate-600">Project:</div>
           <div className="text-sm font-medium">{program.project}</div>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );

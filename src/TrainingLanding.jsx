@@ -11,8 +11,8 @@ export default function TrainingLanding(){
       <Header />
       <Hero />
       <PremiumCards />
-      <Footer />
       <TrainerIntro />
+      <Footer />
     </div>
   );
 }
