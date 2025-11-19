@@ -1,11 +1,14 @@
 {
-  "name": "colorful-training-site",
+  "name": "teach",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://shivaramagiri.github.io/teach-grid",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.2.0",
