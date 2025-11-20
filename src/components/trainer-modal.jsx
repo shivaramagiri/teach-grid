@@ -4,10 +4,6 @@ import { motion } from "framer-motion";
 export default function TrainerModal({ open, onClose, trainer }) {
   if (!open || !trainer) return null;
 
-  // generate dynamic WhatsApp link
-  const message = `Hi, I want to enroll for training with ${trainer.name} (${trainer.role}). Please share the details.`;
-  const whatsappLink = `https://wa.me/${trainer.whatsapp}?text=${encodeURIComponent(message)}`;
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
       
@@ -102,17 +98,6 @@ export default function TrainerModal({ open, onClose, trainer }) {
     View LinkedIn Profile
   </a>
 )}
-
-
-        {/* WhatsApp Enroll Button */}
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 block text-center px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700"
-        >
-          Enroll Now on WhatsApp
-        </a>
       </motion.div>
     </div>
   );

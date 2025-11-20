@@ -4,6 +4,7 @@ import Hero from "./components/Hero.jsx";
 import PremiumCards from "./components/PremiumCards.jsx";
 import Footer from "./components/Footer.jsx";
 import TrainerIntro from "./components/trainer-intro.jsx";
+import EnrollViaWhatsapp from "./components/EnrollWhatsapp.jsx";
 
 export default function TrainingLanding(){
   return (
@@ -12,6 +13,7 @@ export default function TrainingLanding(){
       <Hero />
       <PremiumCards />
       <TrainerIntro />
+      <EnrollViaWhatsapp />
       <Footer />
     </div>
   );

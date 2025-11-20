@@ -13,7 +13,7 @@ const PROGRAMS = [
     colorTo: 'orange-400',
     project: 'E‑commerce App',
     topics: [
-      'HTML5 Semantics', 'CSS3 Flexbox & Grid', 'Responsive Design', 'Bootstrap 5',
+      'HTML5', 'CSS3', 'Flexbox & Grid', 'Responsive Design', 'Bootstrap 5',
       'JavaScript ES6+', 'Asynchronous JS, Fetch & Axios', 'DOM & Events',
       'React Basics', 'React Hooks', 'React Router', 'State Management', 'Context API',
       'Node.js & Express', 'REST APIs', 'Authentication (JWT)', 'File Uploads',
@@ -30,7 +30,7 @@ const PROGRAMS = [
     colorTo: 'lime-400',
     project: 'Project Management Tool',
     topics: [
-      'Angular Fundamentals', 'Components & Modules', 'RxJS Basics', 'Services & DI',
+      'Angular Fundamentals', 'Components', 'Modules', 'RxJS Basics', 'Services',
       'Routing & Guards', 'Forms (Reactive & Template)', 'State Management (NgRx)',
       'Node.js & Express', 'MongoDB', 'REST & GraphQL', 'Auth & Roles', 'Testing'
     ]
@@ -45,7 +45,7 @@ const PROGRAMS = [
     colorTo: 'pink-300',
     project: 'Portfolio SPA',
     topics: [
-      'JS Essentials', 'React Components', 'Hooks Deep Dive', 'Routing', 'Forms', 'API Integration', 'Project'
+      'JS Essentials', 'Components', 'Hooks Deep Dive', 'Routing', 'Forms', 'API Integration', 'Project'
     ]
   },
   {
@@ -57,7 +57,7 @@ const PROGRAMS = [
     colorFrom: 'yellow-300',
     colorTo: 'amber-400',
     project: 'REST API + Docs',
-    topics: ['Node Basics', 'Express', 'Middleware', 'Auth', 'Testing', 'Deployment']
+    topics: ['Node Basics', 'Express', 'Rest Api', 'Crud Operations']
   }
 ];
 

@@ -12,9 +12,9 @@ export default function Header(){
       </div>
       <nav className="hidden md:flex gap-6 text-sm">
         <a href="#courses" className="hover:text-pink-500">Courses</a>
-        <a href="#pricing" className="hover:text-pink-500">Pricing</a>
-        <a href="#contact" className="hover:text-pink-500">Contact</a>
-        <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-400 to-emerald-400 text-white">Enroll</button>
+        {/* <a href="#pricing" className="hover:text-pink-500">Pricing</a> */}
+        <a href="#enroll" className="hover:text-pink-500">Contact</a>
+        {/* <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-400 to-emerald-400 text-white">Enroll</button> */}
       </nav>
     </header>
   );

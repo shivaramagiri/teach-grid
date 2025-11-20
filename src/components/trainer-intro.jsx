@@ -55,7 +55,10 @@ const trainers = [
 
 export default function TrainerIntro() {
   const [selectedTrainer, setSelectedTrainer] = useState(null);
-
+  const [expanded, setExpanded] = useState({});
+  const toggleExpand = (index) => {
+  setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
+};
   return (
     <section className="w-full py-20 px-6 bg-gray-50">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
@@ -64,53 +67,180 @@ export default function TrainerIntro() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {trainers.map((trainer, index) => (
-          <div
-            key={index}
-            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition-all"
-          >
-            {/* Trainer Photo */}
-            <div className="flex justify-center mb-6">
-              <img
-                src={trainer.photo}
-                alt={trainer.name}
-                className="w-32 h-32 rounded-full object-cover border-4 border-gray-200 shadow-md"
-              />
-            </div>
+//           <div
+//             key={index}
+//             className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition-all"
+//           >
+//             {/* Trainer Photo */}
+//             <div className="flex justify-center mb-6">
+//               <img
+//                 src={trainer.photo}
+//                 alt={trainer.name}
+//                 className="w-32 h-32 rounded-full object-cover border-4 border-gray-200 shadow-md"
+//               />
+//             </div>
 
-            {/* Name */}
-            <h3 className="text-xl font-semibold text-gray-900 text-center">
-              {trainer.name}
-            </h3>
+//             {/* Name */}
+//             <h3 className="text-xl font-semibold text-gray-900 text-center">
+//               {trainer.name}
+//             </h3>
 
-            {/* Role */}
-            <p className="text-sm text-gray-500 text-center mt-1">
-              {trainer.role}
-            </p>
+//             {/* Role */}
+//             <p className="text-sm text-gray-500 text-center mt-1">
+//               {trainer.role}
+//             </p>
 
-            {/* Experience */}
-            <p className="text-sm text-blue-600 font-medium text-center mt-2">
-              {trainer.experience}
-            </p>
+//             {/* Experience */}
+//             <p className="text-sm text-blue-600 font-medium text-center mt-2">
+//               {trainer.experience}
+//             </p>
 
-            {/* Skills */}
-            <div className="flex flex-wrap justify-center gap-2 mt-6">
-              {trainer.skills.map((skill, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full border"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
+//             {/* Skills */}
+//             {/* <div className="flex flex-wrap justify-center gap-2 mt-6">
+//               {trainer.skills.map((skill, i) => (
+//                 <span
+//                   key={i}
+//                   className="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full border"
+//                 >
+//                   {skill}
+//                 </span>
+//               ))}
+//             </div> */}
+//             {/* Skills */}
+// <div className="mt-6 flex flex-wrap justify-center gap-2">
+//   {(() => {
+//     const maxVisible = 6; // approx 2 rows depending on screen size
+//     const isExpanded = expanded[index];
+//     const visibleSkills = isExpanded
+//       ? trainer.skills
+//       : trainer.skills.slice(0, maxVisible);
 
-            {/* Button */}
-            <div className="flex justify-center mt-8">
-              <button onClick={() => setSelectedTrainer(trainer)} className="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-orange-400 text-white shadow-lg hover:scale-105 transition">
-                View Profile
-              </button>
-            </div>
-          </div>
+//     return (
+//       <>
+//         {visibleSkills.map((skill, i) => (
+//           <span
+//             key={i}
+//             className="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full border"
+//           >
+//             {skill}
+//           </span>
+//         ))}
+
+//         {/* Show the "..." button if hidden skills exist */}
+//         {!isExpanded && trainer.skills.length > maxVisible && (
+//           <button
+//             onClick={() => toggleExpand(index)}
+//             className="px-3 py-1 text-xs text-blue-600 font-semibold border rounded-full bg-white hover:bg-gray-100"
+//           >
+//             ...
+//           </button>
+//         )}
+
+//         {/* Collapse button */}
+//         {isExpanded && trainer.skills.length > maxVisible && (
+//           <button
+//             onClick={() => toggleExpand(index)}
+//             className="px-3 py-1 text-xs text-red-600 font-semibold border rounded-full bg-white hover:bg-gray-100"
+//           >
+//             Show Less
+//           </button>
+//         )}
+//       </>
+//     );
+//   })()}
+// </div>
+
+
+//             {/* Button */}
+//             <div className="flex justify-center mt-8">
+//               <button onClick={() => setSelectedTrainer(trainer)} className="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-orange-400 text-white shadow-lg hover:scale-105 transition">
+//                 View Profile
+//               </button>
+//             </div>
+//           </div>
+<div
+  key={index}
+  className="bg-white p-6 rounded-3xl shadow-2xl border border-gray-200 hover:shadow-3xl transition-all duration-300"
+>
+  {/* Trainer Photo */}
+  <div className="flex justify-center mb-4">
+    <img
+      src={trainer.photo}
+      alt={trainer.name}
+      className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-md"
+    />
+  </div>
+
+  {/* Name */}
+  <h3 className="text-xl font-bold text-gray-900 text-center">
+    {trainer.name}
+  </h3>
+
+  {/* Role */}
+  <p className="text-sm text-gray-600 text-center mt-1">
+    {trainer.role}
+  </p>
+
+  {/* Experience */}
+  <p className="text-sm text-indigo-600 font-medium text-center mt-1">
+    {trainer.experience}
+  </p>
+
+  {/* Skills */}
+  <div className="mt-5 flex flex-wrap justify-center gap-2 max-w-[260px] mx-auto text-center">
+    {(() => {
+      const maxVisible = 5;
+      const isExpanded = expanded[index];
+      const visibleSkills = isExpanded
+        ? trainer.skills
+        : trainer.skills.slice(0, maxVisible);
+
+      return (
+        <>
+          {visibleSkills.map((skill, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 text-xs bg-gray-100 text-gray-800 rounded-full border shadow-sm"
+            >
+              {skill}
+            </span>
+          ))}
+
+          {!isExpanded && trainer.skills.length > maxVisible && (
+            <button
+              onClick={() => toggleExpand(index)}
+              className="px-3 py-1 text-xs text-blue-600 font-semibold border rounded-full bg-white hover:bg-gray-100 shadow-sm"
+            >
+              ...
+            </button>
+          )}
+
+          {isExpanded && trainer.skills.length > maxVisible && (
+            <button
+              onClick={() => toggleExpand(index)}
+              className="px-3 py-1 text-xs text-red-600 font-semibold border rounded-full bg-white hover:bg-gray-100 shadow-sm"
+            >
+              Show Less
+            </button>
+          )}
+        </>
+      );
+    })()}
+  </div>
+
+  {/* Button */}
+  <div className="flex justify-center mt-7">
+    <button
+      onClick={() => setSelectedTrainer(trainer)}
+      className="px-5 py-2 rounded-xl text-sm font-semibold text-white
+      bg-gradient-to-r from-indigo-500 to-pink-500
+      shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition"
+    >
+      View Profile
+    </button>
+  </div>
+</div>
+
         ))}
       </div>
        <TrainerModal
