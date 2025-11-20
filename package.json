@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "vite deploy"
   },
   "dependencies": {
     "framer-motion": "^10.16.3",
@@ -22,6 +22,7 @@
     "gh-pages": "^6.3.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-gh-pages": "^1.0.1"
   }
 }
