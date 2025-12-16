@@ -26,7 +26,7 @@ export default function Hero(){
         <div className="relative">
           <div className="rounded-3xl p-6 bg-gradient-to-br from-white via-pink-50 to-yellow-50 shadow-2xl border border-pink-100">
             <div className="text-sm text-pink-600 font-semibold">Next batch</div>
-            <div className="mt-2 text-lg font-bold">Starts Dec 1, 2025</div>
+            <div className="mt-2 text-lg font-bold">Starts Dec 25, 2025</div>
             <div className="mt-4 grid grid-cols-2 gap-3">
               <div className="p-3 bg-white rounded-lg shadow">React</div>
               <div className="p-3 bg-white rounded-lg shadow">Node</div>
