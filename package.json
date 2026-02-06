@@ -2,7 +2,7 @@
   "name": "teach",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://shivaramagiri.github.io/teach-grid/",
+  "homepage": "https://techgrid.online/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
